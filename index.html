@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SplitMate</title>
+    <meta
+      name="description"
+      content="Effortlessly split restaurant bills among friends with smart, fair calculations and a clean, user-friendly interface."
+    />
+    <meta property="og:title" content="SplitMate" />
+    <meta
+      property="og:description"
+      content="Effortlessly split restaurant bills among friends with smart, fair calculations and a clean, user-friendly interface."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="app-body">
+    <a class="skip-link" href="#main-content">Skip to bill calculator</a>
+
+    <div class="app-shell">
+      <header class="site-header" role="banner">
+        <div class="header-inner">
+          <div class="brand-lockup">
+            <span class="brand-mark" aria-hidden="true">
+              <svg
+                class="brand-icon"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="2"
+                  y="2"
+                  width="24"
+                  height="24"
+                  rx="7"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M9 14H19M14 9L14 19"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <circle cx="9.5" cy="9.5" r="1.5" fill="currentColor" />
+                <circle cx="18.5" cy="18.5" r="1.5" fill="currentColor" />
+              </svg>
+            </span>
+            <span class="brand-name">SplitMate</span>
+          </div>
+
+          <p class="header-tagline">Good food. Fair shares. Zero awkward math.</p>
+        </div>
+      </header>
+
+      <main id="main-content" class="dashboard-main">
+        <!-- PAGE 1: Bill Entry Section -->
+        <section id="entry-page" class="page-section page-one" aria-labelledby="intro-heading">
+          <div class="intro-banner">
+            <div class="intro-copy">
+              <p class="funny-banner-quote">
+                “No more ‘tu pay krde mei baad me dedunga’!”
+              </p>
+              <h1 id="intro-heading" class="intro-title">
+                Fair bill splitting, down to the last paisa.
+              </h1>
+              <p class="intro-description">
+                SplitMate divides any group expense fairly across everyone at the table. Enter
+                everyone’s names below so each friend sees their exact share in Indian Rupees—when a
+                total doesn’t divide evenly, every remaining paisa is distributed transparently.
+              </p>
+            </div>
+
+            <div class="pizza-showcase" aria-hidden="true">
+              <div class="pizza-stage">
+                <div class="pizza-ambient-glow"></div>
+                <svg
+                  id="pizza-diagram"
+                  class="pizza-svg"
+                  viewBox="0 0 240 240"
+                  width="210"
+                  height="210"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs>
+                    <radialGradient id="crustGrad" cx="50%" cy="50%" r="50%">
+                      <stop offset="72%" stop-color="#f59e0b" />
+                      <stop offset="92%" stop-color="#d97706" />
+                      <stop offset="100%" stop-color="#b45309" />
+                    </radialGradient>
+                    <radialGradient id="cheeseGrad" cx="45%" cy="45%" r="55%">
+                      <stop offset="0%" stop-color="#fef08a" />
+                      <stop offset="65%" stop-color="#fde047" />
+                      <stop offset="100%" stop-color="#facc15" />
+                    </radialGradient>
+                    <radialGradient id="sauceRim" cx="50%" cy="50%" r="50%">
+                      <stop offset="82%" stop-color="#dc2626" stop-opacity="0" />
+                      <stop offset="95%" stop-color="#dc2626" stop-opacity="0.85" />
+                      <stop offset="100%" stop-color="#991b1b" stop-opacity="0.95" />
+                    </radialGradient>
+                    <linearGradient id="pepGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ef4444" />
+                      <stop offset="100%" stop-color="#b91c1c" />
+                    </linearGradient>
+                  </defs>
+
+                  <g class="pizza-wheel">
+                    <!-- Wooden Serving Board Rim -->
+                    <circle cx="120" cy="120" r="110" fill="#1e293b" stroke="rgba(52, 211, 153, 0.35)" stroke-width="2" stroke-dasharray="6 6" />
+
+                    <!-- Golden Baked Crust -->
+                    <circle cx="120" cy="120" r="98" fill="url(#crustGrad)" stroke="#78350f" stroke-width="2.5" />
+
+                    <!-- Tangy Tomato Sauce Rim -->
+                    <circle cx="120" cy="120" r="85" fill="#dc2626" />
+
+                    <!-- Melted Golden Mozzarella Cheese Base -->
+                    <circle cx="120" cy="120" r="81" fill="url(#cheeseGrad)" />
+                    <circle cx="120" cy="120" r="82" fill="url(#sauceRim)" />
+
+                    <!-- Highlighted Featured Slice (Pop-Out Visual Accent) -->
+                    <path
+                      class="pizza-featured-slice"
+                      d="M120 120 L120 22 A98 98 0 0 1 189.3 50.7 Z"
+                      fill="rgba(16, 185, 129, 0.16)"
+                      stroke="#10b981"
+                      stroke-width="2"
+                    />
+
+                    <!-- Colorful Toppings: Pepperoni, Basil Leaves, Olives, Bell Peppers & Sweet Corn -->
+                    <!-- Slice 1 Toppings -->
+                    <circle cx="142" cy="64" r="9.5" fill="url(#pepGrad)" stroke="#7f1d1d" stroke-width="1.2" />
+                    <circle cx="140" cy="62" r="1.4" fill="#fecaca" />
+                    <circle cx="145" cy="66" r="1.2" fill="#fecaca" />
+                    <ellipse cx="129" cy="84" rx="6" ry="3.2" transform="rotate(-28 129 84)" fill="#16a34a" />
+                    <circle cx="155" cy="82" r="3.5" fill="#f97316" />
+
+                    <!-- Slice 2 Toppings -->
+                    <circle cx="176" cy="96" r="10" fill="url(#pepGrad)" stroke="#7f1d1d" stroke-width="1.2" />
+                    <circle cx="174" cy="94" r="1.4" fill="#fecaca" />
+                    <circle cx="179" cy="98" r="1.2" fill="#fecaca" />
+                    <circle cx="154" cy="108" r="5" fill="#1e293b" />
+                    <circle cx="154" cy="108" r="2" fill="#fde047" />
+                    <rect x="182" y="109" width="9" height="4" rx="2" transform="rotate(18 182 109)" fill="#22c55e" />
+
+                    <!-- Slice 3 Toppings -->
+                    <circle cx="174" cy="144" r="9.5" fill="url(#pepGrad)" stroke="#7f1d1d" stroke-width="1.2" />
+                    <circle cx="172" cy="142" r="1.4" fill="#fecaca" />
+                    <ellipse cx="152" cy="134" rx="6.5" ry="3.4" transform="rotate(35 152 134)" fill="#15803d" />
+                    <circle cx="184" cy="129" r="3.5" fill="#fb923c" />
+
+                    <!-- Slice 4 Toppings -->
+                    <circle cx="144" cy="175" r="10" fill="url(#pepGrad)" stroke="#7f1d1d" stroke-width="1.2" />
+                    <circle cx="142" cy="173" r="1.5" fill="#fecaca" />
+                    <circle cx="147" cy="177" r="1.2" fill="#fecaca" />
+                    <circle cx="131" cy="154" r="5" fill="#0f172a" />
+                    <circle cx="131" cy="154" r="2" fill="#fde047" />
+                    <rect x="156" y="158" width="10" height="4" rx="2" transform="rotate(-40 156 158)" fill="#ef4444" />
+
+                    <!-- Slice 5 Toppings -->
+                    <circle cx="97" cy="175" r="9.5" fill="url(#pepGrad)" stroke="#7f1d1d" stroke-width="1.2" />
+                    <circle cx="95" cy="173" r="1.4" fill="#fecaca" />
+                    <ellipse cx="109" cy="152" rx="6" ry="3.2" transform="rotate(-15 109 152)" fill="#16a34a" />
+                    <circle cx="84" cy="160" r="3.5" fill="#f97316" />
+
+                    <!-- Slice 6 Toppings -->
+                    <circle cx="65" cy="143" r="10" fill="url(#pepGrad)" stroke="#7f1d1d" stroke-width="1.2" />
+                    <circle cx="63" cy="141" r="1.4" fill="#fecaca" />
+                    <circle cx="68" cy="145" r="1.2" fill="#fecaca" />
+                    <circle cx="87" cy="132" r="5" fill="#0f172a" />
+                    <circle cx="87" cy="132" r="2" fill="#fde047" />
+                    <rect x="55" y="126" width="9" height="4" rx="2" transform="rotate(25 55 126)" fill="#22c55e" />
+
+                    <!-- Slice 7 Toppings -->
+                    <circle cx="66" cy="96" r="9.5" fill="url(#pepGrad)" stroke="#7f1d1d" stroke-width="1.2" />
+                    <circle cx="64" cy="94" r="1.4" fill="#fecaca" />
+                    <ellipse cx="88" cy="106" rx="6.5" ry="3.2" transform="rotate(42 88 106)" fill="#15803d" />
+                    <circle cx="58" cy="112" r="3.5" fill="#fb923c" />
+
+                    <!-- Slice 8 Toppings -->
+                    <circle cx="96" cy="65" r="10" fill="url(#pepGrad)" stroke="#7f1d1d" stroke-width="1.2" />
+                    <circle cx="94" cy="63" r="1.5" fill="#fecaca" />
+                    <circle cx="99" cy="67" r="1.2" fill="#fecaca" />
+                    <circle cx="109" cy="86" r="5" fill="#0f172a" />
+                    <circle cx="109" cy="86" r="2" fill="#fde047" />
+                    <rect x="78" y="76" width="10" height="4" rx="2" transform="rotate(-32 78 76)" fill="#ef4444" />
+
+                    <!-- Dynamic Fair-Split Cutter Lines (Updated by JS based on group size, default 8 slices) -->
+                    <g id="pizza-slice-lines" class="pizza-slice-lines" stroke="#78350f" stroke-width="2.2" stroke-linecap="round">
+                      <line x1="120" y1="22" x2="120" y2="218" />
+                      <line x1="22" y1="120" x2="218" y2="120" />
+                      <line x1="50.7" y1="50.7" x2="189.3" y2="189.3" />
+                      <line x1="189.3" y1="50.7" x2="50.7" y2="189.3" />
+                    </g>
+
+                    <!-- Center Mint Medallion -->
+                    <circle cx="120" cy="120" r="14" fill="#0f172a" stroke="#34d399" stroke-width="2.5" />
+                    <text
+                      x="120"
+                      y="125"
+                      text-anchor="middle"
+                      fill="#34d399"
+                      font-family="monospace"
+                      font-size="13"
+                      font-weight="bold"
+                    >
+                      ₹
+                    </text>
+                  </g>
+                </svg>
+                <p id="pizza-slice-caption" class="pizza-caption">
+                  8 Equal Slices · 100% Fair Share
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <section
+            class="card panel-entry"
+            aria-labelledby="form-section-title"
+          >
+            <div class="card-header">
+              <div class="card-header-top">
+                <span class="step-kicker">Page 01 · Bill &amp; Group Entry</span>
+                <h2 id="form-section-title" class="card-title">Enter Bill Details</h2>
+              </div>
+              <p class="card-subtitle">
+                Enter the bill total, occasion, and number of people. You can also name everyone at
+                the table so the final bill on Page 2 shows each person by name.
+              </p>
+            </div>
+
+            <form id="bill-form" class="bill-form" novalidate>
+              <div
+                id="form-error-summary"
+                class="error-banner"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+                hidden
+              >
+                <p id="form-error-title" class="error-banner-title">
+                  Please check the highlighted details:
+                </p>
+                <ul id="form-error-list" class="error-banner-list"></ul>
+              </div>
+
+              <div class="form-field form-field-prominent">
+                <label for="bill-amount" class="field-label field-label-prominent">
+                  Total bill amount (₹)
+                </label>
+                <div class="amount-input-wrapper">
+                  <span class="currency-prefix" aria-hidden="true">₹</span>
+                  <input
+                    type="number"
+                    id="bill-amount"
+                    name="billAmount"
+                    class="field-input field-input-amount"
+                    placeholder="1850.50"
+                    inputmode="decimal"
+                    min="0.01"
+                    max="10000000"
+                    step="0.01"
+                    autocomplete="off"
+                    required
+                    aria-describedby="bill-amount-hint bill-amount-error"
+                  />
+                </div>
+                <p id="bill-amount-hint" class="field-hint">
+                  Enter the total in Indian Rupees, including paise (for example, 1420.75).
+                </p>
+                <p
+                  id="bill-amount-error"
+                  class="field-error"
+                  role="status"
+                  aria-live="polite"
+                  hidden
+                ></p>
+              </div>
+
+              <div class="form-row-split">
+                <div class="form-field">
+                  <label for="occasion-name" class="field-label">
+                    Occasion name
+                  </label>
+                  <input
+                    type="text"
+                    id="occasion-name"
+                    name="occasionName"
+                    class="field-input"
+                    placeholder="Dinner at Olive Garden"
+                    maxlength="80"
+                    autocomplete="off"
+                    required
+                    aria-describedby="occasion-name-hint occasion-name-error"
+                  />
+                  <p id="occasion-name-hint" class="field-hint">
+                    What are you splitting? (e.g., Late-night hostel canteen run)
+                  </p>
+                  <p
+                    id="occasion-name-error"
+                    class="field-error"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                  ></p>
+                </div>
+
+                <div class="form-field">
+                  <label for="people-count" class="field-label">
+                    Number of people
+                  </label>
+                  <input
+                    type="number"
+                    id="people-count"
+                    name="peopleCount"
+                    class="field-input"
+                    placeholder="4"
+                    inputmode="numeric"
+                    min="1"
+                    max="100"
+                    step="1"
+                    autocomplete="off"
+                    required
+                    aria-describedby="people-count-hint people-count-error"
+                  />
+                  <p id="people-count-hint" class="field-hint">
+                    Whole number of people sharing the bill (1 to 100).
+                  </p>
+                  <p
+                    id="people-count-error"
+                    class="field-error"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                  ></p>
+                </div>
+              </div>
+
+              <!-- Dynamic Participant Names Option -->
+              <fieldset id="people-names-fieldset" class="names-fieldset">
+                <div class="names-fieldset-header">
+                  <div>
+                    <legend class="field-label">
+                      Names of people sharing the bill (optional)
+                    </legend>
+                    <p id="people-names-hint" class="field-hint">
+                      Add everyone’s name to personalize the bill below. Leave any box blank to use
+                      “Person 1, Person 2…”.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    id="clear-names-btn"
+                    class="btn-text-action"
+                    hidden
+                  >
+                    Clear names
+                  </button>
+                </div>
+
+                <p id="people-names-placeholder" class="names-empty-prompt">
+                  Enter the number of people above (for example, 4) to add each person’s name.
+                </p>
+
+                <div
+                  id="people-names-grid"
+                  class="people-names-grid"
+                  aria-describedby="people-names-hint"
+                  hidden
+                ></div>
+              </fieldset>
+
+              <div class="form-actions">
+                <button
+                  type="submit"
+                  id="split-submit-btn"
+                  class="btn btn-primary btn-prominent"
+                >
+                  Split Bill &amp; View Breakdown Below ↓
+                </button>
+              </div>
+            </form>
+          </section>
+        </section>
+
+        <!-- Page Divider Connector -->
+        <div class="page-divider" aria-hidden="true">
+          <span class="page-divider-line"></span>
+          <a href="#output-panel" class="page-divider-label">
+            Page 02 · Named Bill Breakdown ↓
+          </a>
+          <span class="page-divider-line"></span>
+        </div>
+
+        <!-- PAGE 2: Bill Breakdown & Named Receipt Section Below Page 1 -->
+        <section
+          id="output-panel"
+          class="page-section page-two"
+          aria-labelledby="output-section-title"
+        >
+          <div class="card panel-output">
+            <div class="card-header output-header">
+              <div>
+                <span class="step-kicker">Page 02 · Final Settlement Sheet</span>
+                <h2 id="output-section-title" class="card-title">
+                  Split Breakdown by Person
+                </h2>
+              </div>
+
+              <div class="output-header-meta">
+                <span
+                  id="saved-state-indicator"
+                  class="saved-indicator"
+                  aria-live="polite"
+                  hidden
+                >
+                  Restored from saved split
+                </span>
+                <p class="output-funny-tag">
+                  no more “tu pay krde mei baad me dedunga”
+                </p>
+              </div>
+            </div>
+
+            <div
+              id="status-announcer"
+              class="sr-only"
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            ></div>
+
+            <div id="empty-state" class="empty-state">
+              <div class="empty-state-illustration" aria-hidden="true">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="8"
+                    y="6"
+                    width="32"
+                    height="36"
+                    rx="6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16 16H32M16 24H28M16 32H22"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <circle cx="31" cy="32" r="3" fill="currentColor" />
+                </svg>
+              </div>
+              <h3 class="empty-state-title">Ready for your first bill</h3>
+              <p class="empty-state-description">
+                Fill in the occasion, total bill in ₹, number of people, and their names in Page 1
+                above. Each person’s named share and exact paisa reconciliation will appear here on
+                Page 2.
+              </p>
+              <ul class="empty-state-highlights" aria-label="How SplitMate works">
+                <li>Displays the exact rupee &amp; paisa amount next to each person’s name</li>
+                <li>Distributes any 1-paisa remainders fairly across the group</li>
+                <li>Ends the classic “tu pay krde mei baad me dedunga” excuse forever</li>
+              </ul>
+            </div>
+
+            <div
+              id="results-container"
+              class="results-container"
+              aria-live="polite"
+              aria-atomic="false"
+              hidden
+            >
+              <div class="summary-banner">
+                <div class="summary-primary">
+                  <p class="summary-label">Occasion</p>
+                  <h3 id="result-occasion" class="summary-occasion">—</h3>
+                </div>
+
+                <dl class="summary-metrics">
+                  <div class="metric-item">
+                    <dt class="metric-label">Total Bill</dt>
+                    <dd id="result-total-bill" class="metric-value">₹0.00</dd>
+                  </div>
+                  <div class="metric-item">
+                    <dt class="metric-label">Group Size</dt>
+                    <dd id="result-group-size" class="metric-value">0 people</dd>
+                  </div>
+                  <div class="metric-item metric-item-highlight">
+                    <dt class="metric-label">Per-Person Summary</dt>
+                    <dd id="result-per-person-summary" class="metric-value metric-value-accent">
+                      ₹0.00 each
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+
+              <div
+                id="result-rounding-note"
+                class="rounding-note"
+                role="note"
+                hidden
+              ></div>
+
+              <div class="shares-section">
+                <div class="shares-header">
+                  <h4 id="shares-heading" class="shares-title">
+                    Exact Amount Each Person Owes
+                  </h4>
+                  <span id="shares-count-label" class="shares-count-meta"></span>
+                </div>
+
+                <ol
+                  id="shares-list"
+                  class="shares-list"
+                  aria-labelledby="shares-heading"
+                ></ol>
+              </div>
+
+              <div
+                id="verification-banner"
+                class="verification-banner"
+                role="status"
+                aria-live="polite"
+              >
+                <span class="verification-icon" aria-hidden="true">✓</span>
+                <p id="verification-message" class="verification-text"></p>
+              </div>
+
+              <div class="results-actions">
+                <button
+                  type="button"
+                  id="split-another-btn"
+                  class="btn btn-secondary"
+                >
+                  ↑ Split Another Bill (Back to Page 1)
+                </button>
+                <button
+                  type="button"
+                  id="clear-saved-btn"
+                  class="btn btn-ghost-danger"
+                >
+                  Clear Saved Result
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer" role="contentinfo">
+        <p class="footer-text">
+          Made for fair splits · No more “tu pay krde mei baad me dedunga” · Works offline
+        </p>
+      </footer>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

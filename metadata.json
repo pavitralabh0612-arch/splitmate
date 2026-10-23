@@ -1,0 +1,8 @@
+{
+  "name": "SplitMate",
+  "description": "Effortlessly split restaurant bills among friends with smart, fair calculations and a clean, user-friendly interface.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
